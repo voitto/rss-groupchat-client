@@ -9,8 +9,17 @@ Example group chat client app with the RSS GroupChat Extension  https://rss.ag/r
 
 # how-to
 
-to run the groupchat client app:
+## setup:
+
+run the "npm install" command
+
+## aggregate a feed with groupchat data:
 
 1) edit the index.ts file and paste a feed URL into the urlFeed variable on line 4
-2) run the "npm install" command
-3) run the "npm run dev" command
+2) run the "npm run dev" command
+
+## send a post to the MetaWebLog API:
+
+1) edit the index.ts file and paste the id of a group into the "categories" variable on line 90
+2) run the "npm run dev" command
+
