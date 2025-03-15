@@ -1,0 +1,16 @@
+{
+  "name": "rss-groupchat-client",
+  "version": "1.0.0",
+  "description": "Example RSS group chat client https://rss.ag/rss-groupchat-extension/",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "npx tsx index.ts"
+  },
+  "author": "Brian Hendrickson",
+  "license": "MIT",
+  "dependencies": {
+    "davexmlrpc": "^0.4.26",
+    "reallysimple": "^0.4.29",
+    "tsx": "^4.19.3"
+  }
+}

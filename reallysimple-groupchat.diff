@@ -1,0 +1,103 @@
+20c20,21
+< 	"title", "link", "description", "author", "category", "comments", "enclosures", "guid", "pubDate", "source", "source:outline", "source:likes"
+---
+> 	"title", "link", "description", "author", "category", "comments", "enclosures", "guid", "pubDate", "source", "source:outline", "source:likes",
+> 	"groupchat:group", "rss:groupchat:group"
+25a27,30
+> const allowedGroupChatNames = [
+> 	"title", "url", "id"
+> ];
+> 
+220c225
+< 							removeExtraAttributes (val); //3/27/22 by DW
+---
+> 							removeExtraAttributes (val);
+221a227,230
+> 						}
+> 						else if (x == "enclosures") {
+> 							if (item.enclosures.length > 0) {
+> 								newItem.enclosure = item.enclosures [0];
+223,226c232,241
+< 						else {
+< 							if (x == "enclosures") {
+< 								if (item.enclosures.length > 0) {
+< 									newItem.enclosure = item.enclosures [0];
+---
+> 						}
+> 						else if (x == "groupchat:group" || x == "rss:groupchat:group") {
+> 							const group = val;
+> 							newItem["groupchat:group"] = {};
+> 							
+> 							if (group["#"]) {
+> 								const groupData = group["#"];
+> 								allowedGroupChatNames.forEach(function(groupAttr) {
+> 									if (groupData[groupAttr]) {
+> 										newItem["groupchat:group"][groupAttr] = groupData[groupAttr];
+228,231c243,257
+< 								}
+< 							else {
+< 								newItem [x] = val;
+< 								}
+---
+> 								});
+> 							} else if (group["@"]) {
+> 								allowedGroupChatNames.forEach(function(groupAttr) {
+> 									if (group["@"][groupAttr]) {
+> 										newItem["groupchat:group"][groupAttr] = group["@"][groupAttr];
+> 									}
+> 								});
+> 							} else {
+> 								allowedGroupChatNames.forEach(function(groupAttr) {
+> 									if (group[groupAttr]) {
+> 										newItem["groupchat:group"][groupAttr] = group[groupAttr];
+> 									} else if (group["rss:" + groupAttr]) {
+> 										newItem["groupchat:group"][groupAttr] = group["rss:" + groupAttr];
+> 									}
+> 								});
+234,235c260,264
+< 					});
+< 				}
+---
+> 						else {
+> 							newItem [x] = val;
+> 						}
+> 					}
+> 				});
+236a266
+> 		}
+241d270
+< 				}
+242a272
+> 		}
+251d280
+< 							}
+253,255c282,283
+< 					});
+< 				}
+< 			newItem.enclosure = enc;
+---
+> 					}
+> 				});
+256a285,286
+> 			newItem.enclosure = enc;
+> 		}
+262c292
+< 			}
+---
+> 		}
+265c295
+< 		});
+---
+> 	});
+275c305
+< 			}
+---
+> 		}
+278,280c308,310
+< 			}
+< 		});
+< 	}
+---
+> 		}
+> 	});
+> }
