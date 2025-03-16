@@ -1,7 +1,7 @@
 import { readFeed } from './reallysimple.js'
 import { client } from 'davexmlrpc'
 
-const urlFeed = ""
+const urlFeed = "http://127.0.0.1:3000/feed?key=userkey"
 
 interface GroupChatGroup {
     url: string;
