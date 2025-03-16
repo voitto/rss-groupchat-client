@@ -1,4 +1,4 @@
-# reallysimple-groupchat-client
+# rss-groupchat-client
 Example group chat client app with the RSS GroupChat Extension  https://rss.ag/rss-groupchat-extension/
 
 # files
