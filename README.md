@@ -13,7 +13,7 @@ Example group chat client app with the RSS GroupChat Extension  https://rss.ag/r
 
 run the "npm install" command
 
-## aggregate a feed with groupchat data:
+## read a feed with groupchat data:
 
 1) edit the index.ts file and paste a feed URL into the urlFeed variable on line 4
 2) run the "npm run dev" command
