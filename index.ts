@@ -87,7 +87,7 @@ const params = [
 "", //password
 {
     "title": "This is a test of the MetaWeblog API.",
-    "categories": ["jrtxmtvt"]
+    "categories": ["group123"]
     },
 true //publish
 ];
